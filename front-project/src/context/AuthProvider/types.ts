@@ -12,3 +12,19 @@ export interface IContext extends IUser {
 export interface IAuthProvider {
     children: JSX.Element;
 }
+
+export interface Ilancamentos {
+    id?: string;
+    data?: string;
+    descricao?: string;
+    valor?: string;
+    tipolancamento?:string;
+}
+
+export interface IPaginacao <T> {
+    content?: any;
+    last?: Boolean;
+    first?: Boolean;
+    totalPages?: number;
+    number?: number;
+}

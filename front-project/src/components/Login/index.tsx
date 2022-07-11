@@ -1,4 +1,4 @@
-import { Button, Col, Form, Input, message, Row } from "antd"
+import { Button, Col, Form, Input, message, Row, Image } from "antd"
 import React from "react"
 import { useHistory } from "react-router-dom"
 import { useAuth } from "../../context/AuthProvider/useAuth"
@@ -13,7 +13,7 @@ export const Login = () =>{
         try {
             await auth.authenticate(values.email, values.senha)
             
-            history.push("/profile")
+            history.push("/lancamentos")
         } catch (error) {
             message.error(" Senha ou Email inválidos")
         }
@@ -21,14 +21,24 @@ export const Login = () =>{
     
     
     return(
-        <Row    
+        <div>
+        <Row  
             justify="center"
             align="middle"
             style={{
-                height: '100vh'
+                height: '50vh'
             }}
         >
+             <img src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" alt="Girl in a jacket" width="300" 
+                 /> 
+        </Row>
+        <Row
+            justify="center"
+            align="middle"
+        >
             <Col span={12}>
+                  
+    
                 <Form
                     name="basic"
                     labelCol={{span:8}}
@@ -58,7 +68,7 @@ export const Login = () =>{
                 </Form>
             </Col>
             
-        </Row>
+        </Row></div>
     )
 
 }

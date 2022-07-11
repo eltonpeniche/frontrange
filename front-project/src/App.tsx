@@ -3,6 +3,9 @@ import { AuthProvider } from "./context/AuthProvider"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import { ProtectedLayout } from "./components/protectedLayout"
 import { Login } from "./components/Login"
+import { ListaLancamentos } from "./components/listaLancamentos"
+
+
 
 function App() {
 
@@ -10,10 +13,12 @@ function App() {
     <AuthProvider>
       <BrowserRouter>
         <Switch>
-          <Route path="/profile" >
+          <Route path="/lancamentos" >
             <ProtectedLayout >
-              <h2>Esse é o Component PROFILE</h2>
+              <h2>Esse é o Component Lancamentos</h2>
             </ProtectedLayout>
+            <ListaLancamentos/>
+          
           </Route>
       
           <Route path="/login">
